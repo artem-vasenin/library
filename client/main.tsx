@@ -1,9 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-// import { Store, createStore } from 'redux';
-// import { Provider } from 'react-redux';
+import Library from './components/library';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import store from './store/store';
 
 ReactDOM.render(
-    <h1>Hello World</h1>,
+    <Provider store={store}>
+      <library />  
+    </Provider>,
   document.getElementById('app')
 );
