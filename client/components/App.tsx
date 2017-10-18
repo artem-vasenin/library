@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header/Header';
 import Menu from './Menu/Menu';
-import Home from './Pages/Home';
+import Page from './Pages/Page';
 import Footer from './Footer/Footer';
 
 interface IProps {
@@ -16,12 +16,12 @@ interface IState {
 export default class App extends React.Component<IProps, IState> {
 	render() {
 		return (
-			<div className='App'>
+			<section className='App'>
 				<Header />
 				<Menu />
-				<Home />
+				<Page />
 				<Footer />
-			</div>
+			</section>
 		);
 	}
 }

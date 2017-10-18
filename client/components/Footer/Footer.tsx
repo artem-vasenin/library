@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import Logo from '../Blocks/Molecules/Logo/Logo';
+import Constants from '../../constants/Constants';
 
 interface IProps {
 
@@ -12,8 +14,22 @@ interface IState {
 export default class Footer extends React.Component<IProps, IState> {
 	render() {
 		return (
-			<footer className='footer container'>
-				Подвал
+			<footer className='section section--footer footer'>
+				<div className="container">
+					<div className="row">
+						<div className="col-md-2 footer__logo">
+							<Logo />
+						</div>
+						<div className="col-md-8 copy">
+							{ Constants.COPY }
+						</div>
+						<div className="col-md-2 madein">
+							<span className="madein__text">
+								Сайт сделан <a className="madein__link" href="http://артёмвасенин.рф">студией "Русич"</a>
+							</span>
+						</div>
+					</div>
+				</div>
 			</footer>
 		);
 	}

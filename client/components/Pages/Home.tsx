@@ -13,10 +13,10 @@ interface IState {
 export default class Home extends React.Component<IProps, IState> {
 	render() {
 		return (
-			<main className='main container'>
-				<h1 className='heading heading--type1'>Добавлялка книг</h1>
+			<section className='content'>
+				<h1 className='heading heading--type1'>Главная страница</h1>
 				<Register />
-			</main>
+			</section>
 		);
 	}
 }
