@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 interface IProps { }
 
@@ -8,9 +9,9 @@ export default class Logo extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<div className="logo logo--header">
-				<a href="/">
-                    <img src="http://placehold.it/150x50" alt="logo"/>
-                </a>
+				<Link to="/" className="logo__link">
+                    <img className="logo__img" src="http://placehold.it/150x50" alt="logo"/>
+                </Link>
 			</div>
 		);
 	}
