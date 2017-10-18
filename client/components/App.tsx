@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Header from './Header/Header';
 import Menu from './Menu/Menu';
-import Main from './Main/Main';
+import Home from './Pages/Home';
 import Footer from './Footer/Footer';
 
 interface IProps {
@@ -19,7 +19,7 @@ export default class App extends React.Component<IProps, IState> {
 			<div className='App'>
 				<Header />
 				<Menu />
-				<Main />
+				<Home />
 				<Footer />
 			</div>
 		);
