@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import Register from '../Register/Register';
+import Register from '../../Register/Register';
 
 interface IProps {
 

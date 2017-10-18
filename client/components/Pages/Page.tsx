@@ -1,11 +1,16 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import Books from './Books';
-import Chat from './Chat';
-import UserRoom from './UserRoom';
-import Contacts from './Contacts';
+import Home from './Home/Home';
+import HomeAside from './Home/HomeAside';
+import Books from './Books/Books';
+import BooksAside from './Books/BooksAside';
+import Chat from './Chat/Chat';
+import ChatAside from './Chat/ChatAside';
+import UserRoom from './UserRoom/UserRoom';
+import UserRoomAside from './UserRoom/UserRoomAside';
+import Contacts from './Contacts/Contacts';
+import ContactsAside from './Contacts/ContactsAside';
 
 interface IProps {
 
@@ -20,7 +25,16 @@ export default class Page extends React.Component<IProps, IState> {
 		return (
 			<main className='main container'>
 				<div className="row">
-					<div className="col-md-12">
+					<aside className="col-md-3">
+					<Switch>
+						<Route exact path='/' component={ HomeAside }/>
+						<Route path='/books' component={ BooksAside }/>
+						<Route exact path='/chat' component={ ChatAside }/>
+						<Route path='/userroom' component={ UserRoomAside }/>
+						<Route exact path='/contacts' component={ ContactsAside }/>
+					</Switch>
+					</aside>
+					<article className="col-md-9">
 					<Switch>
 						<Route exact path='/' component={ Home }/>
 						<Route path='/books' component={ Books }/>
@@ -28,7 +42,7 @@ export default class Page extends React.Component<IProps, IState> {
 						<Route path='/userroom' component={ UserRoom }/>
 						<Route exact path='/contacts' component={ Contacts }/>
 					</Switch>
-					</div>
+					</article>
 				</div>
 			</main>
 		);
