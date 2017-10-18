@@ -1,7 +1,15 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-export default class Library extends React.Component<void, void> {
+interface IProps {
+
+}
+
+interface IState {
+
+}
+
+export default class Library extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<div className='library'>

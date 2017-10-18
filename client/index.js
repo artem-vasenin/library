@@ -1,2 +1,3 @@
 import './less/main.less';
-import './main';
+// import './main';
+import './design/index.tsx';
