@@ -9,12 +9,12 @@ interface IState {
 
 }
 
-export default class Library extends React.Component<IProps, IState> {
+export default class Home extends React.Component<IProps, IState> {
 	render() {
 		return (
-			<div className='library'>
+			<main className='main container'>
 				<h1 className='heading heading--type1'>Добавлялка книг</h1>
-			</div>
+			</main>
 		);
 	}
 }
