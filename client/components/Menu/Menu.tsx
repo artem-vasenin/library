@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 interface IProps {
 
@@ -18,10 +18,18 @@ export default class Menu extends React.Component<IProps, IState> {
 					<div className="row">
 						<nav className="col-md-12 menu">
 							<ul className="menu__list">
-								<li className="menu__item"><Link to="/books" className="menu__link">Книги</Link></li>
-								<li className="menu__item"><Link to="/userroom" className="menu__link">Кабинет</Link></li>
-								<li className="menu__item"><Link to="/chat" className="menu__link">Чат</Link></li>
-								<li className="menu__item"><Link to="/contacts" className="menu__link">Контакты</Link></li>
+								<li className="menu__item">
+									<NavLink to="/books" className="menu__link">Книги</NavLink>
+								</li>
+								<li className="menu__item">
+									<NavLink to="/chat" className="menu__link">Чат</NavLink>
+								</li>
+								<li className="menu__item">
+									<NavLink to="/userroom" className="menu__link">Кабинет</NavLink>
+								</li>
+								<li className="menu__item">
+									<NavLink to="/contacts" className="menu__link">Контакты</NavLink>
+								</li>
 							</ul>
 						</nav>
 					</div>
