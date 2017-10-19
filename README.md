@@ -39,6 +39,7 @@ npm run start:prod
 ```
 
 Visit [http://localhost:3000/](http://localhost:3000/).
+Проект на тестовом сервере http://x96789f9.beget.tech/
 
 This will build the assets for you on the first run. For subsequent starts, you should run:
 
