@@ -13,7 +13,7 @@ export default class BooksAside extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<div className='aside__content'>
-				<div className='heading heading--type2'>Книги Сайдбар</div>
+				<div className='heading heading--type2'>Авторы: </div>
 			</div>
 		);
 	}

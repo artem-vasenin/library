@@ -26,7 +26,7 @@ export default class Header extends React.Component<IProps, IState> {
 								{ Constants.SERVICE_NAME }
 							</div>
 						</div>
-						<div className="col-md-2">
+						<div className="col-md-2 header__login">
 							<Login />
 						</div>
 					</div>
