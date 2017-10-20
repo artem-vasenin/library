@@ -12,8 +12,8 @@ interface IState {
 export default class ChatAside extends React.Component<IProps, IState> {
 	render() {
 		return (
-			<div className='sidebar'>
-				<h2 className='heading heading--type2'>Чат Сайдбар</h2>
+			<div className='aside__content'>
+				<div className='heading heading--type2'>Чат Сайдбар</div>
 			</div>
 		);
 	}

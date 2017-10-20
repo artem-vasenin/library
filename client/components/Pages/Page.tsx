@@ -24,8 +24,8 @@ export default class Page extends React.Component<IProps, IState> {
 	render() {
 		return (
 			<main className='main container'>
-				<div className="row">
-					<aside className="col-md-3">
+				<div className="site-body row">
+					<aside className="col-md-3 aside">
 					<Switch>
 						<Route exact path='/' component={ HomeAside }/>
 						<Route path='/books' component={ BooksAside }/>
@@ -34,7 +34,7 @@ export default class Page extends React.Component<IProps, IState> {
 						<Route exact path='/contacts' component={ ContactsAside }/>
 					</Switch>
 					</aside>
-					<article className="col-md-9">
+					<article className="col-md-9 content-wrap">
 					<Switch>
 						<Route exact path='/' component={ Home }/>
 						<Route path='/books' component={ Books }/>

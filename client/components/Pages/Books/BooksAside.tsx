@@ -12,8 +12,8 @@ interface IState {
 export default class BooksAside extends React.Component<IProps, IState> {
 	render() {
 		return (
-			<div className='sidebar'>
-				<h2 className='heading heading--type2'>Книги Сайдбар</h2>
+			<div className='aside__content'>
+				<div className='heading heading--type2'>Книги Сайдбар</div>
 			</div>
 		);
 	}
