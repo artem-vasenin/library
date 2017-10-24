@@ -66,7 +66,7 @@ function addDevMiddlewares(app, webpackConfig) {
 
   const fs = middleware.fileSystem;
 
-  app.get('*', (req, res) => {
+  app.get(/.*/, (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
       if (err) {
         res.sendStatus(404);
