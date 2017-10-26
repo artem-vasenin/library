@@ -30,9 +30,12 @@ class BooksList extends React.Component<IProps, IState> {
 		return (
 			<section className="book-list">
 			<h2 className="heading heading--type2">Список книг</h2>
-			{this.state.bookList.map((item: IBook, index: number) => (
-				<BookItem item={item} index={index} key={index} />
-			))}
+			{this.state.bookList.map((item: IBook, index: number) => {
+				const soauthors = item.soauthors.length ?  item.soauthors.length : 0;
+				return (
+					<BookItem item={item} index={index} key={index} soauthors={soauthors} />
+				);
+			})}
 			</section>
 		);
 	}

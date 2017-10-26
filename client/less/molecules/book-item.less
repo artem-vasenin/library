@@ -1,8 +1,35 @@
 .book-item {
+	padding: 15px;
+	background: @gray-4;
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:hover {
+		background: @gray-3;
+	}
 	
 	.heading {
-		&--small {
-			float: right;
+		font-weight: 600;
+	}
+
+	.button-readmore {
+		margin: 10px 0;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			color: @dark-1;
 		}
+	}
+
+	&__footer {
+		border-top: 1px solid @gray-2;
+		padding-top: 10px;
 	}
 }

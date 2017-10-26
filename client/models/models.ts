@@ -5,8 +5,9 @@ export interface IGlobalState {
 }
 
 export interface IBook {
+	id: number,
 	author: string;
-	soauthors?: string[];
+	soauthors?: number[];
 	date: string;
 	title: string;
 	desc: string;
