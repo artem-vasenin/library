@@ -1,6 +1,6 @@
 export interface IGlobalState {
 	user: string;
-	books: IBook[] | boolean;
+	bookList: IBook[] | boolean;
 	book: IBook | boolean;
 }
 
