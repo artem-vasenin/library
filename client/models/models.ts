@@ -1,5 +1,6 @@
 export interface IGlobalState {
-	user: string;
+	user: number;
+	role: number;
 	bookList: IBook[] | boolean;
 	book: IBook | boolean;
 }
@@ -12,4 +13,21 @@ export interface IBook {
 	title: string;
 	desc: string;
 	fullText: string;
+}
+
+export interface IFields {
+	component: string;
+	type?: string;
+	name: string;
+	id?: string;
+	value?: string | number | boolean;
+	placeholder?: string;
+	label?: string;
+	required?: boolean;
+}
+
+export interface IForm {
+	fields: IFields[];
+	className: string;
+	link: string;
 }

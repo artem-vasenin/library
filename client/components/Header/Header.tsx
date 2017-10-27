@@ -4,15 +4,7 @@ import Logo from '../Blocks/Molecules/Logo/Logo';
 import Login from '../Login/Login';
 import Constants from '../../constants/Constants';
 
-interface IProps {
-
-}
-
-interface IState {
-
-}
-
-export default class Header extends React.Component<IProps, IState> {
+export default class Header extends React.Component<void, void> {
 	render() {
 		return (
 			<header className='section section--header header'>
@@ -23,7 +15,7 @@ export default class Header extends React.Component<IProps, IState> {
 						</div>
 						<div className="col-md-8">
 							<div className="service-name">
-								{ Constants.SERVICE_NAME }
+								<div className="service-name__text">{ Constants.SERVICE_NAME }</div>
 							</div>
 						</div>
 						<div className="col-md-2 header__login">

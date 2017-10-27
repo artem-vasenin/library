@@ -29,7 +29,8 @@ const bookList = [
 ];
 
 const initialState: IGlobalState = {
-	user: 'guest',
+	user: 1,
+	role: 3,
 	bookList: bookList,
 	book: false
 };
