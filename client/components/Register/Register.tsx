@@ -1,13 +1,8 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 
-interface IProps {
+interface IProps {}
 
-}
-
-interface IState {
-
-}
+interface IState {}
 
 export default class Register extends React.Component<IProps, IState> {
 	render() {

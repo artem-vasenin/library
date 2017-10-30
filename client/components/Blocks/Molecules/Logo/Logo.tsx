@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-interface IProps { }
-
-interface IState { }
-
-export default class Logo extends React.Component<IProps, IState> {
+export default class Logo extends React.Component<any, any> {
 	render() {
 		return (
 			<div className="logo logo--header">

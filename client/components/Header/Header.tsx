@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import Logo from '../Blocks/Molecules/Logo/Logo';
 import Login from '../Login/Login';
 import Constants from '../../constants/Constants';
 
-export default class Header extends React.Component<void, void> {
+export default class Header extends React.Component<any, any> {
 	render() {
 		return (
 			<header className='section section--header header'>

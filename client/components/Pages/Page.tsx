@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import HomeAside from './Home/HomeAside';

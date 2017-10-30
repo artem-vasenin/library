@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { IBook, IGlobalState, IFields } from '../../../models/models';
 // import FormLinkGenerator from '../../../functions/FormLinkGenerator';
 import BookItem from './BookItem';
-import Form from '../../Blocks/Molecules/Form/Form';
-import Constants from '../../../constants/constants';
+// import Form from '../../Blocks/Molecules/Form/Form';
+import Constants from '../../../constants/Constants';
 import Button from '../../Blocks/Atoms/Button';
 
 interface IProps {
@@ -60,7 +60,7 @@ class BooksList extends React.Component<IProps, IState> {
 		}
 	];
 
-	getPanele = (role) => {
+	getPanele = (role: number) => {
 		if (role && role > 1) {
 			return (
 				<div className="panele">
@@ -99,7 +99,7 @@ class BooksList extends React.Component<IProps, IState> {
 			<section className="book-list">
 			<h2 className="heading heading--type2">Список книг</h2>
 			{this.state.bookList.map((item: IBook, index: number) => {
-				const soauthors = item.soauthors.length ?  item.soauthors.length : 0;
+				const soauthors = (item.soauthors && item.soauthors.length) ?  item.soauthors.length : 0;
 				return (
 					<BookItem item={item} index={index} key={index} soauthors={soauthors} />
 				);

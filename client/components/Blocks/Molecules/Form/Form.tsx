@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { IFields, IForm } from '../../../../models/models';
-import Constants from '../../../../constants/constants';
+import { IForm } from '../../../../models/models';
+import Constants from '../../../../constants/Constants';
 
-interface IState { }
+interface IState {}
 
 export default class Form extends React.Component<IForm, IState> {
     constructor(props: any) {

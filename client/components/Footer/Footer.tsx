@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import Logo from '../Blocks/Molecules/Logo/Logo';
 import Constants from '../../constants/Constants';
 

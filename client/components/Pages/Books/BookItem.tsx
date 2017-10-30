@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import ReactHtmlParser, { processNodes, convertNodeToElement} from 'react-html-parser';
+// import ReactHtmlParser, { processNodes, convertNodeToElement} from 'react-html-parser';
 import { IBook } from '../../../models/models';
-import Constants from '../../../constants/constants';
+import Constants from '../../../constants/Constants';
 
 interface IProps {
 	index: number,
