@@ -60,8 +60,8 @@ class BooksList extends React.Component<IProps, IState> {
 		}
 	];
 
-	getPanele = (role: number) => {
-		if (role && role > 1) {
+	getPanele = () => {
+		if (this.props.role > 1) {
 			return (
 				<div className="panele">
 					<Button 
@@ -78,7 +78,8 @@ class BooksList extends React.Component<IProps, IState> {
 					/>
 				</div>
 			);
-		}
+		} 
+		return false;
 	}
 
 	getForm = (fields, cname) => {
@@ -98,6 +99,7 @@ class BooksList extends React.Component<IProps, IState> {
 		return (
 			<section className="book-list">
 			<h2 className="heading heading--type2">Список книг</h2>
+			{this.getPanele()}
 			{this.state.bookList.map((item: IBook, index: number) => {
 				const soauthors = (item.soauthors && item.soauthors.length) ?  item.soauthors.length : 0;
 				return (
