@@ -1,105 +1,107 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { IBook, IGlobalState, IFields } from '../../../models/models';
+import { IBook, IGlobalState, IField } from '../../../models/models';
 // import FormLinkGenerator from '../../../functions/FormLinkGenerator';
 import BookItem from './BookItem';
-// import Form from '../../Blocks/Molecules/Form/Form';
+import Form from '../../Blocks/Molecules/Form/Form';
 import Constants from '../../../constants/Constants';
 import Button from '../../Blocks/Atoms/Button';
 
 interface IProps {
+	bookList: IBook[];
 	user: number;
 	role: number;
-	bookList: IBook[];
 }
 
 interface IState {
+	showForm: boolean;
 	bookList: IBook[];
 	limit: number;
 	page: number;
 }
 
 class BooksList extends React.Component<IProps, IState> {
-	constructor(props: any) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			bookList: this.props.bookList,
 			limit: 10,
-			page: 1
+			page: 1,
+			showForm: false
 		}
 	}
 
-	formFields: IFields[] = [
+	formFields: IField[] = [
 		{
 			component: 'FieldInput', 
 			type: 'text', 
 			name: 'title', 
-			id: 'FieldTitle', 
-			placeholder: Constants.FORM.TITLE, 
+			id: 'field-title', 
+			placeholder: Constants.FORM.TITLE,
+			className: 'field field--text',
 			required: true
 		},
 		{
 			component: 'FieldTextarea', 
 			name: 'desc', 
-			id: 'FieldDesc', 
-			placeholder: Constants.FORM.DESC, 
+			id: 'field-desc', 
+			placeholder: Constants.FORM.DESC,
+			className: 'field field--textarea',
 			required: true
 		},
 		{
 			component: 'FieldTextarea', 
 			name: 'fulltext', 
-			id: 'FieldText', 
-			placeholder: Constants.FORM.FULLTEXT, 
+			id: 'field-fulltext', 
+			placeholder: Constants.FORM.FULLTEXT,
+			className: 'field field--textarea',
 			required: true
 		},
 		{
 			component: 'FieldButton', 
+			type: 'field-submit',
 			name: 'title', 
-			id: 'FieldText', 
-			value: Constants.FORM.SUBMIT
+			id: 'Submit', 
+			value: Constants.FORM.SUBMIT,
+			className: 'button button--submit buttom--primary',
 		}
 	];
 
 	getPanele = () => {
-		if (this.props.role > 1) {
+		if (this.props.role) {
+			let text = Constants.BUTTONS.ADDBOOK;
+
 			return (
-				<div className="panele">
+				<div className="panele pull-right">
 					<Button 
 						type="primary"
-						text={ Constants.BUTTONS.ADDBOOK }
+						text={text}
 						action="ADDBOOK"
-						callback={this.getAddForm}
-					/>
-					<Button 
-						type="primary"
-						text={ Constants.BUTTONS.EDITBOOK }
-						action="EDITBOOK"
-						callback={this.getEditForm}
+						callback={this.onHandleCkick}
 					/>
 				</div>
 			);
-		} 
-		return false;
+		} else {
+			return false;
+		}
 	}
 
-	getForm = (fields, cname) => {
-
+	onHandleCkick = (cname, fields, path) => {
+		this.setState({showForm: !this.state.showForm});
 	}
-	
-	getAddForm = (fields, cname) => {
-
-	}
-		
-	getEditForm = (fields, cname) => {
-
-	}
-	// } <Form link="" fields={this.formFields} className="add-book" />;
 
 	render() {
 		return (
 			<section className="book-list">
 			<h2 className="heading heading--type2">Список книг</h2>
 			{this.getPanele()}
+			{this.state.showForm && 
+			<Form 
+				link="/addbook" 
+				fields={this.formFields} 
+				className="form form--add-book" 
+			/>
+			}
 			{this.state.bookList.map((item: IBook, index: number) => {
 				const soauthors = (item.soauthors && item.soauthors.length) ?  item.soauthors.length : 0;
 				return (

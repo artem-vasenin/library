@@ -15,7 +15,7 @@ export interface IBook {
 	fullText: string;
 }
 
-export interface IFields {
+export interface IField {
 	component: string;
 	type?: string;
 	name: string;
@@ -24,10 +24,11 @@ export interface IFields {
 	placeholder?: string;
 	label?: string;
 	required?: boolean;
+	className: string;
 }
 
 export interface IForm {
-	fields: IFields[];
+	fields: IField[];
 	className: string;
 	link: string;
 }
