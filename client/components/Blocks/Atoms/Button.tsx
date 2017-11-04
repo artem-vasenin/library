@@ -16,7 +16,7 @@ export default class Button extends React.Component<IProps, IState> {
                 className={'button' + (this.props.type && ` button--${this.props.type}`)}
                 onClick={this.props.callback}
             >
-                { this.props.text }
+                {this.props.text}
             </button>
 		);
 	}

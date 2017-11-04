@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { IBook, IGlobalState, IField } from '../../../models/models';
+import {connect} from 'react-redux';
+import {IBook, IGlobalState, IField} from '../../../models/models';
 // import FormLinkGenerator from '../../../functions/FormLinkGenerator';
 import BookItem from './BookItem';
 import Form from '../../Blocks/Molecules/Form/Form';

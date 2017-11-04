@@ -13,7 +13,7 @@ export default class Login extends React.Component<any, any> {
 			<div className='login container'>
                 <Button 
                     type="primary"
-                    text={ Constants.BUTTONS.LOGIN }
+                    text={Constants.BUTTONS.LOGIN}
                     action="LOGIN"
 					callback={this.callback}
                 />

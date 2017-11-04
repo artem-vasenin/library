@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import ReactHtmlParser, { processNodes, convertNodeToElement} from 'react-html-parser';
-import { IBook } from '../../../models/models';
+import {IBook} from '../../../models/models';
 import Constants from '../../../constants/Constants';
 
 interface IProps {
