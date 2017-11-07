@@ -6,6 +6,8 @@
     text-transform: uppercase;
     padding: 4px 8px;
     cursor: pointer;
+    border: none;
+    outline: none;
     box-shadow: 2px 2px 6px @dark-a-3;
 
     &:hover {
@@ -20,34 +22,34 @@
             background: @btn-primary-hover;
         }
     }
-    
+
     &--success {
         color: white;
-        background: @primary;
+        background: @success;
 
         &:hover {
-            background: @btn-primary-hover;
+            background: @btn-success-hover;
         }
     }
-    
+
     &--danger {
         color: white;
-        background: @primary;
+        background: @danger;
 
         &:hover {
-            background: @btn-primary-hover;
+            background: @btn-danger-hover;
         }
     }
-    
+
     &--warning {
         color: white;
-        background: @primary;
+        background: @warning;
 
         &:hover {
-            background: @btn-primary-hover;
+            background: @btn-warning-hover;
         }
     }
-    
+
     &--info {
         color: white;
         background: @primary;
@@ -55,5 +57,9 @@
         &:hover {
             background: @btn-primary-hover;
         }
+    }
+
+    &--submit {
+        margin-bottom: 10px;
     }
 }

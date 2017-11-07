@@ -24,7 +24,7 @@ export default class Footer extends React.Component<IProps, IState> {
 						</div>
 						<div className="col-md-2 madein">
 							<span className="madein__text">
-								Сайт сделан <a className="madein__link" href="http://артёмвасенин.рф">студией "Русич"</a>
+								Сайт сделан <br /><a className="madein__link" href="http://артёмвасенин.рф">студией "<b>Русич</b>"</a>
 							</span>
 						</div>
 					</div>

@@ -18,6 +18,7 @@ interface IState {
 	bookList: IBook[];
 	limit: number;
 	page: number;
+	panelleButtonText: string;
 }
 
 class BooksList extends React.Component<IProps, IState> {
@@ -27,54 +28,55 @@ class BooksList extends React.Component<IProps, IState> {
 			bookList: this.props.bookList,
 			limit: 10,
 			page: 1,
-			showForm: false
+			showForm: false,
+			panelleButtonText: Constants.BUTTONS.ADDBOOK
 		}
 	}
 
 	formFields: IField[] = [
 		{
-			component: 'FieldInput', 
-			type: 'text', 
-			name: 'title', 
-			id: 'field-title', 
+			component: 'FieldInput',
+			type: 'text',
+			name: 'title',
+			id: 'field-title',
 			placeholder: Constants.FORM.TITLE,
 			className: 'field field--text',
 			required: true
 		},
 		{
-			component: 'FieldTextarea', 
-			name: 'desc', 
-			id: 'field-desc', 
+			component: 'FieldTextarea',
+			name: 'desc',
+			id: 'field-desc',
 			placeholder: Constants.FORM.DESC,
 			className: 'field field--textarea',
 			required: true
 		},
 		{
-			component: 'FieldTextarea', 
-			name: 'fulltext', 
-			id: 'field-fulltext', 
+			component: 'FieldTextarea',
+			name: 'fulltext',
+			id: 'field-fulltext',
 			placeholder: Constants.FORM.FULLTEXT,
 			className: 'field field--textarea',
 			required: true
 		},
 		{
-			component: 'FieldButton', 
+			component: 'FieldButton',
 			type: 'field-submit',
-			name: 'title', 
-			id: 'Submit', 
-			value: Constants.FORM.SUBMIT,
-			className: 'button button--submit buttom--primary',
+			name: 'title',
+			id: 'Submit',
+			value: Constants.BUTTONS.ADDBOOK,
+			className: 'button button--submit button--primary',
 		}
 	];
 
 	getPanele = () => {
 		if (this.props.role) {
-			let text = Constants.BUTTONS.ADDBOOK;
+			let text = this.state.showForm ? 'Закрыть форму' : this.state.panelleButtonText;
 
 			return (
 				<div className="panele pull-right">
-					<Button 
-						type="primary"
+					<Button
+						type={this.state.showForm ? 'warning' : 'primary'}
 						text={text}
 						action="ADDBOOK"
 						callback={this.onHandleCkick}
@@ -87,7 +89,9 @@ class BooksList extends React.Component<IProps, IState> {
 	}
 
 	onHandleCkick = (cname, fields, path) => {
-		this.setState({showForm: !this.state.showForm});
+		this.setState({
+			showForm: !this.state.showForm
+		});
 	}
 
 	render() {
@@ -95,11 +99,11 @@ class BooksList extends React.Component<IProps, IState> {
 			<section className="book-list">
 			<h2 className="heading heading--type2">Список книг</h2>
 			{this.getPanele()}
-			{this.state.showForm && 
-			<Form 
-				link="/addbook" 
-				fields={this.formFields} 
-				className="form form--add-book" 
+			{this.state.showForm &&
+			<Form
+				link="/addbook"
+				fields={this.formFields}
+				className="form form--add-book"
 			/>
 			}
 			{this.state.bookList.map((item: IBook, index: number) => {

@@ -14,7 +14,7 @@ export default class FormField extends React.Component<IProps, IState> {
             item = this.props.item;
 
         switch (item.component) {
-            case 'FieldInput': 
+            case 'FieldInput':
                 if (item.label) {
                     fieldComponent = (
                         <label className="label">
@@ -36,7 +36,7 @@ export default class FormField extends React.Component<IProps, IState> {
                             name={item.name}
                             placeholder={item.placeholder}
                             className={item.className}
-                        />  
+                        />
                     );
                 }
             break;
@@ -68,14 +68,16 @@ export default class FormField extends React.Component<IProps, IState> {
             break;
             case 'FieldButton':
                 fieldComponent = (
-                    <button
-                        id={item.id}
-                        type={item.type}
-                        name={item.name}
-                        className={item.className}
-                    >
-                    {item.value}
-                    </button>
+                    <div className="button-block">
+                        <button
+                            id={item.id}
+                            type={item.type}
+                            name={item.name}
+                            className={item.className}
+                        >
+                        {item.value}
+                        </button>
+                    </div>
                 );
             break;
         }
