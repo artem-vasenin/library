@@ -3,6 +3,7 @@ export interface IGlobalState {
 	role: number;
 	bookList: IBook[] | boolean;
 	book: IBook | boolean;
+	users: IUser[];
 }
 
 export interface IBook {
@@ -31,4 +32,11 @@ export interface IForm {
 	fields: IField[];
 	className: string;
 	link: string;
+}
+
+export interface IUser {
+	id: number;
+	name: string;
+	login: string;
+	role: number;
 }

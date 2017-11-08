@@ -28,11 +28,36 @@ const bookList = [
 	}
 ];
 
+const users = [
+	{
+		id: 1,
+		name: 'Артём',
+		login: 'Rusich',
+		role: 1
+	}, {
+		id: 2,
+		name: 'Гость',
+		login: 'Guest',
+		role: 0
+	}, {
+		id: 3,
+		name: 'Ириха',
+		login: 'Iriha-Vjun',
+		role: 2
+	}, {
+		id: 4,
+		name: 'Жанна',
+		login: 'Jannuaria',
+		role: 2
+	}
+];
+
 const initialState: IGlobalState = {
 	user: 1,
 	role: 3,
 	bookList: bookList,
-	book: false
+	book: false,
+	users: users
 };
 
 export default function reducer(state: IGlobalState = initialState, action: any) {

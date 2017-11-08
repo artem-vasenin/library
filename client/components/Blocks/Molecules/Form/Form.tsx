@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {IField} from '../../../../models/models';
+import {connect} from 'react-redux';
+import {IBook, IGlobalState, IField} from '../../../../models/models';
 import Constants from '../../../../constants/Constants';
 import Formfield from './FormField';
 
@@ -7,10 +8,19 @@ interface IProps {
 	link: string;
 	fields: IField[];
 	className: string;
+	user: number;
+	role: number;
+	bookList: boolean | IBook[];
 }
 interface IState {}
 
-export default class Form extends React.Component<IProps, IState> {
+class Form extends React.Component<IProps, IState> {
+	constructor(props) {
+		super(props);
+		this.state = {
+			
+		}
+	}
     
 	render() {
 		return (
@@ -27,3 +37,13 @@ export default class Form extends React.Component<IProps, IState> {
 		);
 	}
 }
+
+const mapStateToProps = (state: IGlobalState) => {
+	return {
+		user: state.user,
+		role: state.role,
+		bookList: state.bookList
+	};
+};
+
+export default connect(mapStateToProps)(Form);
