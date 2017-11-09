@@ -16,6 +16,12 @@ export interface IBook {
 	fullText: string;
 }
 
+interface IValidation {
+	required: boolean;
+	live: boolean;
+	type: string;
+}
+
 export interface IField {
 	component: string;
 	type?: string;
@@ -24,7 +30,7 @@ export interface IField {
 	value?: string | number | boolean;
 	placeholder?: string;
 	label?: string;
-	required?: boolean;
+	validation: IValidation;
 	className: string;
 }
 

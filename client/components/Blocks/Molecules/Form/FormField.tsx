@@ -8,6 +8,13 @@ interface IProps {
 interface IState {}
 
 export default class FormField extends React.Component<IProps, IState> {
+    constructor(props: IProps) {
+        super(props);
+        this.state = {
+            submit: 'disabled',
+            fields: {}
+        };
+    }
 
     getField = () => {
         let fieldComponent,

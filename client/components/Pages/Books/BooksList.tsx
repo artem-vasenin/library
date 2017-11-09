@@ -41,7 +41,11 @@ class BooksList extends React.Component<IProps, IState> {
 			id: 'field-title',
 			placeholder: Constants.FORM.TITLE,
 			className: 'field field--text',
-			required: true
+			validation: {
+				required: true,
+				live: false,
+				type: 'text'
+			}
 		},
 		{
 			component: 'FieldTextarea',
@@ -49,7 +53,11 @@ class BooksList extends React.Component<IProps, IState> {
 			id: 'field-desc',
 			placeholder: Constants.FORM.DESC,
 			className: 'field field--textarea',
-			required: true
+			validation: {
+				required: true,
+				live: false,
+				type: 'text'
+			}
 		},
 		{
 			component: 'FieldTextarea',
@@ -57,7 +65,11 @@ class BooksList extends React.Component<IProps, IState> {
 			id: 'field-fulltext',
 			placeholder: Constants.FORM.FULLTEXT,
 			className: 'field field--textarea',
-			required: true
+			validation: {
+				required: true,
+				live: false,
+				type: 'text'
+			}
 		},
 		{
 			component: 'FieldButton',
@@ -66,6 +78,11 @@ class BooksList extends React.Component<IProps, IState> {
 			id: 'Submit',
 			value: Constants.BUTTONS.ADDBOOK,
 			className: 'button button--submit button--primary',
+			validation: {
+				required: true,
+				live: false,
+				type: 'button'
+			}
 		}
 	];
 
