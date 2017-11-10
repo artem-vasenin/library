@@ -17,7 +17,7 @@ class BooksAside extends React.Component<IProps, IState> {
 					<ul className="users__list">
 					{this.props.users.map((item: IUser, index: number) => {
 						return (
-							<li className={item.role ? 'users__item' : 'users__ityem hidden'}>
+							<li className={item.role ? 'users__item' : 'users__ityem hidden'} key={index}>
 								<a href={`/user/${item.login}`} className="users__link">{item.name}</a>
 							</li>			
 						);

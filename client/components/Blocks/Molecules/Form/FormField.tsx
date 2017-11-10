@@ -1,19 +1,42 @@
 import * as React from 'react';
-import {IField} from '../../../../models/models';
+import {connect} from 'react-redux';
+import {IField, IGlobalState} from '../../../../models/models';
 
 interface IProps {
     item: IField;
+    user: number;
+    role: number;
 }
 
-interface IState {}
+interface IState {
+    submit: string;
+    fields: Object;
+}
 
-export default class FormField extends React.Component<IProps, IState> {
+class FormField extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.state = {
             submit: 'disabled',
             fields: {}
         };
+    }
+
+    handleChange = (e: any) => {
+        const element = e.target;
+        console.log(e.target.value);
+        let fields = {
+            [element.name]: {
+                id: element.id,
+                type: element.type,
+                name: element.name,
+                className: element.className,
+                value: e.target.value,
+            }
+        }
+        this.setState({
+            fields: fields
+        });
     }
 
     getField = () => {
@@ -32,6 +55,8 @@ export default class FormField extends React.Component<IProps, IState> {
                                 name={item.name}
                                 placeholder={item.placeholder}
                                 className={item.className}
+                                onChange={this.handleChange}
+                                value={this.state[item.name]}
                             />
                         </label>
                     );
@@ -43,6 +68,8 @@ export default class FormField extends React.Component<IProps, IState> {
                             name={item.name}
                             placeholder={item.placeholder}
                             className={item.className}
+                            onChange={this.handleChange}
+                            value={this.state[item.name]}
                         />
                     );
                 }
@@ -57,6 +84,8 @@ export default class FormField extends React.Component<IProps, IState> {
                                 name={item.name}
                                 placeholder={item.placeholder}
                                 className={item.className}
+                                onChange={this.handleChange}
+                                value={this.state[item.name]}
                             >
                             </textarea>
                         </label>
@@ -68,6 +97,8 @@ export default class FormField extends React.Component<IProps, IState> {
                             name={item.name}
                             placeholder={item.placeholder}
                             className={item.className}
+                            onChange={this.handleChange}
+                            value={this.state[item.name]}
                         >
                         </textarea>
                     );
@@ -95,3 +126,12 @@ export default class FormField extends React.Component<IProps, IState> {
         return this.getField();
     }
 }
+
+const mapStateToProps = (state: IGlobalState) => {
+    return {
+        user: state.user,
+        role: state.role
+    };
+};
+
+export default connect(mapStateToProps)(FormField);

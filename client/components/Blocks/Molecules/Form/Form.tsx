@@ -12,13 +12,18 @@ interface IProps {
 	role: number;
 	bookList: boolean | IBook[];
 }
-interface IState {}
+
+interface IState {
+	submit: string;
+	fields: Object;
+}
 
 class Form extends React.Component<IProps, IState> {
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+			submit: 'disabled',
+			fields: {}
 		}
 	}
     
