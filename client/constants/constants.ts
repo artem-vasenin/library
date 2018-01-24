@@ -12,6 +12,25 @@ const Constants = {
         DESC: "Аннотация",
         FULLTEXT: "Текст книги",
         SUBMIT: "Добавить"
+    },
+    PAGES: {
+      BOOKS: {
+        TITLE: "Книги"
+      }
+    },
+    MENU: {
+      BOOKS: {
+        TITLE: "Книги"
+      },
+      CHAT: {
+        TITLE: "Чат"
+      },
+      USERROOM: {
+        TITLE: "Кабинет"
+      },
+      CONTACTS: {
+        TITLE: "Контакты"
+      }
     }
 }
 

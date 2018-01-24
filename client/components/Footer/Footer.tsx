@@ -20,7 +20,7 @@ export default class Footer extends React.Component<IProps, IState> {
 							<Logo />
 						</div>
 						<div className="col-md-8 copy">
-							{ Constants.COPY }
+							{Constants.COPY}
 						</div>
 						<div className="col-md-2 madein">
 							<span className="madein__text">

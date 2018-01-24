@@ -33,6 +33,7 @@ export default class Page extends React.Component<IProps, IState> {
 						<Route exact path='/contacts' component={ ContactsAside }/>
 					</Switch>
 					</aside>
+					
 					<article className="col-md-9 content-wrap">
 					<Switch>
 						<Route exact path='/' component={ Home }/>
